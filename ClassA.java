@@ -3,8 +3,8 @@ package java8_advantage;
 import java.security.spec.RSAOtherPrimeInfo;
 
 public class ClassA {
-    static int outerStaticNum;
-    int outerNum;
+    static int sOuterStaticNum;
+    int mOuterNum;
 
     public ClassA(String name) {
         System.out.println(name + " is created");
@@ -20,16 +20,16 @@ public class ClassA {
 
     public void testScopes() {
         IConcat<Integer> iConcat = (a, b) -> {
-            outerNum = 1;
-            System.out.println(outerNum+" instance field from lambda expression");
-            return a+outerNum+b;
+            mOuterNum = 1;
+            System.out.println(mOuterNum + " instance field from lambda expression");
+            return a + mOuterNum + b;
         };
-        System.out.println(outerNum + " " + iConcat.concat(1, 3));
+        System.out.println(mOuterNum + " " + iConcat.concat(1, 3));
         iConcat = (a, b) -> {
-            outerStaticNum = 11;
-            System.out.println(outerStaticNum + " static field from lambda expression");
-            return a+outerStaticNum+b;
+            sOuterStaticNum = 11;
+            System.out.println(sOuterStaticNum + " static field from lambda expression");
+            return a + sOuterStaticNum + b;
         };
-        System.out.println(outerStaticNum + " " + iConcat.concat(1, 2));
+        System.out.println(sOuterStaticNum + " " + iConcat.concat(1, 2));
     }
 }
