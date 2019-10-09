@@ -1,13 +1,15 @@
 package java8_advantage;
 
-import java.security.spec.RSAOtherPrimeInfo;
-
 public class ClassA {
     static int sOuterStaticNum;
     int mOuterNum;
 
     public ClassA(String name) {
         System.out.println(name + " is created");
+    }
+
+    public void setmOuterNum(int mOuterNum) {
+        this.mOuterNum = mOuterNum;
     }
 
     public static String staticMethod(String a, String b) {
@@ -31,5 +33,12 @@ public class ClassA {
             return a + sOuterStaticNum + b;
         };
         System.out.println(sOuterStaticNum + " " + iConcat.concat(1, 2));
+    }
+
+    @Override
+    public String toString() {
+        return "ClassA{" +
+                "mOuterNum=" + mOuterNum +
+                '}';
     }
 }
