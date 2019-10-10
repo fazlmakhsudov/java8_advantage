@@ -1,6 +1,15 @@
 package java8_advantage;
 
+import javax.print.DocFlavor;
+import javax.swing.text.DateFormatter;
 import java.awt.*;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -170,21 +179,69 @@ public class Main {
 //                    .stream()
 //                    .sorted()
 //                    .reduce((s1, s2) -> s1 + "#" + s2);
-//        reduced.ifPresent(System.out::println);
+//        reduced.ifPresent(System.out::println);+
+//            //Parralel stream
+//            long t0 = System.nanoTime();
+//            long count = sValues.stream().sorted().count();
+//            System.out.println(count);
+//            long t1 = System.nanoTime();
+//            long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
+//            System.out.println(String.format("sequential sort took: %d ms", (t1 - t0)));
+//            t0 = System.nanoTime();
+//            count = sValues.parallelStream().sorted().count();
+//            System.out.println(count);
+//            t1 = System.nanoTime();
+//            millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
+//            System.out.println(String.format("parallel sort took: %d ms", (t1 - t0)));
+//            //Assosiative array
+//            Map<Integer, String> map = new HashMap<>();
+//            for (int i = 0; i < 10; i++) {
+//                map.putIfAbsent(i, "val " + i);
+//            }
+//            //   map.forEach((id, val) -> System.out.println(val));
+//            map.computeIfPresent(3, (num, val) -> val + num);
+//            System.out.println(map.get(3));
+//            map.computeIfPresent(9, (num, val) -> null);
+//            System.out.println(map.containsKey(9));
+//            map.computeIfAbsent(23, num -> "val" + num);
+//            System.out.println(map.containsKey(23));
+//            map.computeIfAbsent(3, num -> "bam");
+//            System.out.println(map.get(3));
+//            map.remove(3, "val 3");
+//            System.out.println(map.get(3));
+//            map.remove(3, "val 33");
+//            System.out.println(map.get(3));
+//            map.getOrDefault(42, "not found");
+//            System.out.println(map.get(42));
+//            map.merge(9, "val 9", (value, newValue) -> value.concat(newValue));
+//            System.out.println(map.get(9));
+//            map.merge(9, "val 9", (value, newValue) -> value.concat(newValue));
+//            System.out.println(map.get(9));
         }
-        //Parralel stream
-        long t0 = System.nanoTime();
-        long count = sValues.stream().sorted().count();
-        System.out.println(count);
-        long t1 = System.nanoTime();
-        long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
-        System.out.println(String.format("sequential sort took: %d ms", (t1 - t0)));
-        t0 = System.nanoTime();
-        count = sValues.parallelStream().sorted().count();
-        System.out.println(count);
-        t1 = System.nanoTime();
-        millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
-        System.out.println(String.format("parallel sort took: %d ms", (t1 - t0)));
+//        //Clock
+//        Clock clock = Clock.systemDefaultZone();
+//        long millis = clock.millis();
+//        Instant instant = clock.instant();
+//        Date legacyDate = Date.from(instant);
+//        System.out.println(legacyDate);
+//        //LocalTime
+//        ZoneId zoneId = ZoneId.of("Europe/London");
+//        LocalTime now1 = LocalTime.now();
+//        LocalTime now2 = LocalTime.now(zoneId);
+//        System.out.println(now1 + "  " + now2);
+//        System.out.println(now1.isBefore(now2));
+//        long minutesBetweenZones = ChronoUnit.MINUTES.between(now1, now2);
+//        System.out.println(minutesBetweenZones);
+//        LocalTime late = LocalTime.of(23, 56, 59);
+//        System.out.println(late);
+//        DateTimeFormatter germanFormatter =
+//                DateTimeFormatter
+//                        .ofLocalizedTime(FormatStyle.SHORT)
+//                        .withLocale(Locale.GERMAN);
+//        LocalTime lateTime = LocalTime.parse("13:25", germanFormatter);
+//        System.out.println(lateTime);
+
 
     }
+
 }

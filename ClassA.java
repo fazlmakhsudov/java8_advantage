@@ -1,5 +1,6 @@
 package java8_advantage;
 
+@Hints({@Hint("hint1"), @Hint("hint2")})
 public class ClassA {
     static int sOuterStaticNum;
     int mOuterNum;
