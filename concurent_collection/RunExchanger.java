@@ -1,8 +1,10 @@
 package java8_advantage.concurent_collection;
 
-import java.security.spec.ECField;
 import java.util.concurrent.Exchanger;
 
+/**
+ * Class demonstrates work of Exchanger
+ */
 public class RunExchanger {
     private static Exchanger<String> exchanger = new Exchanger<>();
 

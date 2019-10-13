@@ -1,11 +1,12 @@
 package java8_advantage.concurent_collection;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Class demonstrates work of ReentrantLock
+ */
 public class RunReentrantLock {
 
     static class Note {

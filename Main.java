@@ -1,23 +1,8 @@
 package java8_advantage;
 
-import javax.print.DocFlavor;
-import javax.swing.text.DateFormatter;
-import java.awt.*;
-import java.time.Clock;
-import java.time.Instant;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.time.temporal.ChronoUnit;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.jar.JarOutputStream;
+import java.util.UUID;
 
 public class Main {
     static List<String> sStringCollection = new ArrayList<String>();
@@ -217,8 +202,7 @@ public class Main {
 //            System.out.println(map.get(9));
 //            map.merge(9, "val 9", (value, newValue) -> value.concat(newValue));
 //            System.out.println(map.get(9));
-        }
-//        //Clock
+            //Clock
 //        Clock clock = Clock.systemDefaultZone();
 //        long millis = clock.millis();
 //        Instant instant = clock.instant();
@@ -240,8 +224,7 @@ public class Main {
 //                        .withLocale(Locale.GERMAN);
 //        LocalTime lateTime = LocalTime.parse("13:25", germanFormatter);
 //        System.out.println(lateTime);
-
-
+        }
     }
 
 }

@@ -3,6 +3,9 @@ package java8_advantage.concurent_collection;
 import java.util.concurrent.Phaser;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Class demonstrates work of Phazer
+ */
 public class RunPhazer {
 
     static class MultiCompetion extends Thread {

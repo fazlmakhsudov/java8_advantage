@@ -1,9 +1,11 @@
 package java8_advantage.concurent_collection;
 
-import javax.sound.midi.Soundbank;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * Class demonstrates work of CyclicBarrier
+ */
 public class RunCyclicBarrier {
     static class Runner extends Thread {
         private CyclicBarrier mCyclicBarrier;

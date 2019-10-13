@@ -1,13 +1,15 @@
 package java8_advantage.concurent_collection;
 
-import java8_advantage.ClassA;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
+/**
+ * Class demonstrates work of CountDownLatch
+ */
 public class RunCountDownLatch {
-    static class Cashier extends Thread{
+    static class Cashier extends Thread {
         private List<Customer> customers;
 
         public Cashier(List<Customer> customers) {
@@ -20,12 +22,12 @@ public class RunCountDownLatch {
                 for (int i = 1; i <= customer.mGoods; i++) {
                     customer.getCountDownLatch().countDown();
                 }
-//                try {
-//                    customer.wait(500);
-//                } catch (InterruptedException ie) {
-//                    System.err.println(customer.getName() + " can't pay");
-//                }
-                System.err.println("Cashier counted price for " + customer.getName());
+                try {
+                    sleep(300*customer.mGoods);
+                } catch (InterruptedException ie) {
+                    System.err.println(customer.getName() + " seems doesn't have money");
+                }
+                System.out.println("Cashier counted price for " + customer.getName());
             }
         }
     }
@@ -44,6 +46,7 @@ public class RunCountDownLatch {
         public void run() {
             try {
                 System.out.println(this.getName() + " in the queue");
+                TimeUnit.MILLISECONDS.sleep(600*mGoods);
                 this.countDownLatch.await();
                 System.out.println(this.getName() + " paid the bill and left");
             } catch (InterruptedException ie) {

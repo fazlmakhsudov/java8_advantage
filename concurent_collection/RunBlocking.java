@@ -3,6 +3,9 @@ package java8_advantage.concurent_collection;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * Class demonstrates work of BlockingQueue
+ */
 public class RunBlocking {
     public static void main(String[] args) {
         final BlockingQueue<String> queue = new ArrayBlockingQueue<String>(2);
